@@ -11,8 +11,9 @@ namespace RpgApi.Data
 {
     public class DataContext : DbContext
     {
-       //ctor + Enter --> Atalho para criar construtor
-       public DataContext(DbContextOptions<DataContext> options) : base(options)
+        
+        //ctor + Enter --> Atalho para criar construtor
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
        {        
        }
 
@@ -25,9 +26,7 @@ namespace RpgApi.Data
             modelBuilder.Entity<Arma>().ToTable("TB_ARMAS");
 
             modelBuilder.Entity<Personagem>().HasData
-            (
-                //Colar a linha dos sete personagens da
-                //controller PersonagensExemplo aqui
+            (                
                 new Personagem() { Id = 1, Nome = "Frodo", PontosVida=100, Forca=17, Defesa=23, Inteligencia=33, Classe=ClasseEnum.Cavaleiro},
                 new Personagem() { Id = 2, Nome = "Sam", PontosVida=100, Forca=15, Defesa=25, Inteligencia=30, Classe=ClasseEnum.Cavaleiro},
                 new Personagem() { Id = 3, Nome = "Galadriel", PontosVida=100, Forca=18, Defesa=21, Inteligencia=35, Classe=ClasseEnum.Clerigo },
